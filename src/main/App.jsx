@@ -15,7 +15,8 @@ export default props =>
             <h1>Mercados</h1>
             <Logo/>
             <Nav/>
-            <Main/>
+            <Main icon="home" title="Início"
+                subtitle="Mercado Preço da Promoção"/>
             <Footer/>
         </div>
     </BrowserRouter>
