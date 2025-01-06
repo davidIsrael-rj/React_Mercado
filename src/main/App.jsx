@@ -12,7 +12,6 @@ import Footer from '../components/template/Footer'
 export default props =>
     <BrowserRouter>
         <div className="app">
-            <h1>Mercados</h1>
             <Logo/>
             <Nav/>
             <Main icon="home" title="Início"
