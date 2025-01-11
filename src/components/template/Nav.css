@@ -1,15 +1,25 @@
 aside.menu-area{
     background-color: var(--bg-dark);
     box-shadow: 
-        2px 0 10px 0 rgba(0, 0, 0, 0.12),
-        2px 0 15px 0 rgba(0, 0, 0, 0.09);
+    2px 0 10px 0 rgba(0, 0, 0, 0.12),
+    2px 0 15px 0 rgba(0, 0, 0, 0.09);
+}
+
+.fundo{
+    
+    /* background-image: "url('src\assets\imgs\img.jpg')"; */
+    background-image: url('../../assets/imgs/fundo.webp');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
 }
 
 .menu a {
     display: block;
     text-decoration: none;
     font-weight: 300;
-    color: #fff;
+    color: #FFF;
     padding: 15px;
 }
 
@@ -17,8 +27,3 @@ aside.menu-area{
     background: linear-gradient(135deg, #07a7e3 0%, #32dac3 100%);
 }
 
-.foto{
-    padding: 0px 15px;
-    width: 550px;
-    height: 500px;
-}
