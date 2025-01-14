@@ -10,7 +10,7 @@ const headerProps = {
 
 const baseUrl = 'http://localhost:3001/users'
 const initialState = {
-    user: { name: '', email: '' },
+    user: { name: '', email: '',password: '', birthAt: ''},
     list: []
 }
 
@@ -68,6 +68,28 @@ export default class UserCrud extends Component {
                                 value={this.state.user.email}
                                 onChange={e => this.updateField(e)}
                                 placeholder="Digite o e-mail..."
+                            />
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-6">
+                        <div className="form-group">
+                            <label >Password</label>
+                            <input type="text" className="form-control"
+                                name="password"
+                                value={this.state.user.password}
+                                onChange={e => this.updateField(e)}
+                                placeholder="Digite a senha..."
+                            />
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-6">
+                        <div className="form-group">
+                            <label >birthAt</label>
+                            <input type="text" className="form-control"
+                                name="birthAt"
+                                value={this.state.user.birthAt}
+                                onChange={e => this.updateField(e)}
+                                placeholder="Digite o birthAt..."
                             />
                         </div>
                     </div>
