@@ -129,6 +129,25 @@ export default class UserCrud extends Component {
        }) 
     }
 
+    renderTable(){
+        return (
+            <table className="table mt-4">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Password</th>
+                        <th>birthAt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.renderRows()}
+                </tbody>
+            </table>
+        )
+    }
+
+    
     
     render() {
         
