@@ -80,7 +80,7 @@ export default class UserCrud extends Component {
                     <div className="col-12 col-md-6">
                         <div className="form-group">
                             <label >Password</label>
-                            <input type="text" className="form-control"
+                            <input type="password" className="form-control"
                                 name="password"
                                 value={this.state.user.password}
                                 onChange={e => this.updateField(e)}
