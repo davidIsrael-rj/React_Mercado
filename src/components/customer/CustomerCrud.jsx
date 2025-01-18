@@ -41,8 +41,16 @@ export default class CustomerCrud extends Component {
             })
     }
 
-    renderTable(){
-        return(
+    getUpdatedList(customer, add = true) {
+        const list = this.state.list.filter(c => c.id !== customer.id)
+        if (add) list.unshift(customer)
+        return list
+    }
+
+    
+
+    renderTable() {
+        return (
             <table className="table mt-4">
                 <thead>
                     <tr>
@@ -62,7 +70,7 @@ export default class CustomerCrud extends Component {
         )
     }
 
-    renderRows(){
+    renderRows() {
         return this.state.list.map(customer => {
             return (
                 <tr key={customer.id}>
