@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Main from "../template/Main";
+import axios from "axios";
 
 const headerProps = {
     icon: 'shopping-cart',
@@ -25,8 +26,19 @@ export default class CustomerCrud extends Component {
         })
     }
 
-    clear(){
-        this.setState({customer: initialState.customer})
+    clear() {
+        this.setState({ customer: initialState.customer })
+    }
+
+    save() {
+        const customer = this.state.customer
+        const method = customer.id ? 'put' : 'post'
+        const url = customer.id ? `${baseUrl}/${customer.id}` : baseUrl
+        axios[method](url, customer)
+            .then(resp => {
+                const list = this.getUpdatedList(resp.data)
+                this.setState({ customer: initialState.customer, list })
+            })
     }
 
     render() {
