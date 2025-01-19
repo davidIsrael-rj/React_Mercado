@@ -13,7 +13,10 @@ export default props =>
                     <i className="fa fa-users"></i>Usuários
                 </Link>
                 <Link to="/customer">
-                    <i className="fa fa-shopping-cart"></i>Cliente
+                    <i className="fa fa-child"></i>Cliente
+                </Link>
+                <Link to="/sector">
+                    <i className="fa fa-cubes"></i>Setor
                 </Link>
             </nav>
         </div>
