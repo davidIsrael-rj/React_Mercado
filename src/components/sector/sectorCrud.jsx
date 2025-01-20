@@ -39,6 +39,14 @@ export default class SectorCrud extends Component {
             })
     }
 
+    getUpdatedList(sector, add = true){
+        const list = this.state.list.filter(s => s.id !== sector.id)
+        if(add) list.unshift(sector)
+            return list
+    }
+
+    
+
     load(sector){
         this.setState({sector})
     }
