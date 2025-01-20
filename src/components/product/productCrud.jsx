@@ -24,6 +24,21 @@ export default class ProductCrud extends Component {
         })
     }
 
+    clear(){
+        this.setState({product: initialState.product})
+    }
+
+    save(){
+        const product = this.state.product
+        const method = product.id ? 'put': 'post'
+        const url = product.id ? `${baseUrl}/${product.id}` : baseUrl
+        axios[method](url, product)
+            .then(resp =>{
+                const list = this.getUpdatedList(resp.data)
+                this.setState({product: initialState.product, list})
+            })
+    }
+
     renderTable(){
         return(
             <table className="table mt-4">
