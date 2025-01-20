@@ -45,6 +45,14 @@ export default class SectorCrud extends Component {
             return list
     }
 
+    updateField(event){
+        const sector = {...this.state.sector}
+        sector[event.target.name] = event.target.value
+        this.setState({sector})
+    }
+
+    
+
     
 
     load(sector){
