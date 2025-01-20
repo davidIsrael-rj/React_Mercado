@@ -39,6 +39,31 @@ export default class ProductCrud extends Component {
             })
     }
 
+    getUpdatedList(product, add = true){
+        const list = this.state.list.filter(p => p.id !== product.id)
+        if(add) list.unshift(product)
+            return list
+    }
+
+    updateField(event){
+        const product = {...this.state.product}
+        product[event.target.name] = event.target.value
+        this.setState({product})
+    }
+
+    remove(product){
+        axios.delete(`${baseUrl}/${product.id}`).then(resp =>{
+            const list = this.getUpdatedList(product, false)
+            this.setState({list})
+        })
+    }
+
+
+
+    load(product){
+        this.setState({product})
+    }
+
     renderTable(){
         return(
             <table className="table mt-4">
