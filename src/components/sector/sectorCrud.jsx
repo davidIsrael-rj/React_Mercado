@@ -62,6 +62,39 @@ export default class SectorCrud extends Component {
         this.setState({sector})
     }
 
+    renderForm(){
+        return(
+            <div className="form">
+                <div className="row">
+                    <div className="col-12 col-md-6">
+                        <div className="form-group">
+                            <label>Nome:</label>
+                            <input type="text" className="form-control" 
+                                name="name"
+                                value={this.state.sector.name}
+                                onChange={e => this.updateField(e)}
+                                placeholder="Digite o nome do Setor"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div className="row">
+                    <div className="col-12 d-flex justify-content-end">
+                        <button className="btn btn-primary m-1"
+                            onClick={e => this.save(e)}>
+                            Salvar
+                        </button>
+                        <button className="btn btn-secondary m-1"
+                            onClick={e => this.clear(e)}>
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
     renderTable(){
         return(
             <table className="table mt-4">
@@ -85,10 +118,12 @@ export default class SectorCrud extends Component {
                     <td>{sector.id}</td>
                     <td>{sector.name}</td>
                     <td>
-                        <button className="btn btn-warning">
+                        <button className="btn btn-warning"
+                        onClick={() =>this.load(sector)}>
                             <i className="fa fa-pencil"></i>
                         </button>
-                        <button className="btn btn-danger ml-2">
+                        <button className="btn btn-danger ml-2"
+                            onClick={()=>this.remove(sector)}>
                             <i className="fa fa-trash"></i>
                         </button>
                     </td>
@@ -100,6 +135,7 @@ export default class SectorCrud extends Component {
     render(){
         return(
             <Main {...headerProps}>
+                {this.renderForm()}
                {this.renderTable()}
             </Main>
         )
