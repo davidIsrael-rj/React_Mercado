@@ -51,10 +51,13 @@ export default class SectorCrud extends Component {
         this.setState({sector})
     }
 
+    remove(sector){
+        axios.delete(`${baseUrl}/${sector.id}`).then(resp =>{
+            const list = this.getUpdatedList(sector, false)
+            this.setState({list})
+        })
+    }
     
-
-    
-
     load(sector){
         this.setState({sector})
     }
