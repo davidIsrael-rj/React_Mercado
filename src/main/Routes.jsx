@@ -6,6 +6,7 @@ import UserCrud from "../components/user/UserCrud";
 import CustomerCrud from "../components/customer/CustomerCrud";
 import SectorCrud from "../components/sector/sectorCrud";
 import ProductCrud from "../components/product/productCrud";
+import SupplierCrud from "../components/supplier/supplierCrud";
 
 
 
@@ -16,5 +17,6 @@ export default props =>
         <Route path='/customer' component={CustomerCrud}/>
         <Route path='/sector' component={SectorCrud}/>
         <Route path='/product' component={ProductCrud}/>
+        <Route path='/supplier' component={SupplierCrud }/>
         <Redirect from='*' to='/' />
     </Switch>
