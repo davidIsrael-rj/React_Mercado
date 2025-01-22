@@ -23,6 +23,10 @@ export default class SupplierCrud extends Component {
         })
     }
 
+    clear(){
+        this.setState({supplier: initialState.supplier})
+    }
+
     renderTable(){
         return(
             <table className="table mt-4">
