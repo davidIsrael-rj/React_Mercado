@@ -27,6 +27,19 @@ export default class SupplierCrud extends Component {
         this.setState({supplier: initialState.supplier})
     }
 
+    save(){
+        const supplier = this.state.supplier
+        const method = supplier.id ? 'put' : 'post'
+        const url = supplier.id ? `${baseUrl}/${supplier.id}` : baseUrl
+        axios[method](url, supplier)
+            .then(resp =>{
+                const list = this.getUpdatedList(resp.data)
+                this.setState({supplier: initialState.supplier, list})
+            })
+    }
+
+    
+
     renderTable(){
         return(
             <table className="table mt-4">
