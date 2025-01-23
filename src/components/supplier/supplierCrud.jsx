@@ -38,6 +38,11 @@ export default class SupplierCrud extends Component {
             })
     }
 
+    getUpdatedList(supplier, add = true){
+        const list = this.state.list.filter(f => f.id !==supplier.id)
+        if(add) list.unshift(supplier)
+            return list
+    }
     
 
     renderTable(){
