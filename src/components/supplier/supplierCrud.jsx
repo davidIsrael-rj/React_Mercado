@@ -49,6 +49,13 @@ export default class SupplierCrud extends Component {
         supplier[event.target.name] = event.target.value
         this.setState({supplier})
     }
+
+    remove(supplier){
+        axios.delete(`${baseUrl}/${supplier.id}`).then(resp =>{
+            const list = this.getUpdatedList(supplier, false)
+            this.setState({list})
+        })
+    }
     
 
     renderTable(){
