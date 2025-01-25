@@ -43,6 +43,12 @@ export default class SupplierCrud extends Component {
         if(add) list.unshift(supplier)
             return list
     }
+
+    updateFiel(event){
+        const supplier = {...this.state.supplier}
+        supplier[event.target.name] = event.target.value
+        this.setState({supplier})
+    }
     
 
     renderTable(){
