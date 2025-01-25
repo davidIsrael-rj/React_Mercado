@@ -56,6 +56,10 @@ export default class SupplierCrud extends Component {
             this.setState({list})
         })
     }
+
+    load(supplier){
+        this.setState({supplier})
+    }
     
 
     renderTable(){
