@@ -39,12 +39,12 @@ export default class SupplierCrud extends Component {
     }
 
     getUpdatedList(supplier, add = true){
-        const list = this.state.list.filter(f => f.id !==supplier.id)
+        const list = this.state.list.filter(f => f.id !== supplier.id)
         if(add) list.unshift(supplier)
             return list
     }
 
-    updateFiel(event){
+    updateField(event){
         const supplier = {...this.state.supplier}
         supplier[event.target.name] = event.target.value
         this.setState({supplier})
@@ -72,7 +72,7 @@ export default class SupplierCrud extends Component {
                                 name="name"
                                 value={this.state.supplier.name}
                                 onChange={e => this.updateField(e)}
-                                placeholder="Digite o NOme do Fornecedor"
+                                placeholder="Digite o Nome do Fornecedor"
                             />
                         </div>
                     </div>
@@ -208,10 +208,12 @@ export default class SupplierCrud extends Component {
                     <td>{supplier.ie}</td>
                     <td>{supplier.cep}</td>
                     <td>
-                        <button className="btn btn-warning">
+                        <button className="btn btn-warning"
+                            onClick={()=>this.load(supplier)}>
                             <i className="fa fa-pencil"></i>
                         </button>
-                        <button  className="btn btn-danger ml-2">
+                        <button  className="btn btn-danger ml-2"
+                            onClick={()=> this.remove(supplier)}>
                             <i className="fa fa-trash"></i> 
                         </button>
                     </td>
